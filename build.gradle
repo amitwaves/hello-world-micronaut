@@ -40,6 +40,8 @@ dependencies {
     testImplementation "io.micronaut.test:micronaut-test-kotlintest"
     testImplementation "io.mockk:mockk:1.9.3"
     testImplementation "io.kotlintest:kotlintest-runner-junit5:3.3.2"
+    testImplementation "org.spekframework.spek2:spek-dsl-jvm:$spek_version"
+    testRuntimeOnly "org.spekframework.spek2:spek-runner-junit5:$spek_version"
 }
 
 test.classpath += configurations.developmentOnly
@@ -48,7 +50,9 @@ mainClassName = "com.amitwaves.helloworld.Application"
 
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        includeEngines 'spek2'
+    }
 }
 
 allOpen {
