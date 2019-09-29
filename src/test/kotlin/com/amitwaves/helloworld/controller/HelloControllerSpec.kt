@@ -12,7 +12,7 @@ object HelloControllerSpec: Spek({
         var client : HttpClient = HttpClient.create(server.url)
 
         it("should respond Hello World from Kotlin on success") {
-            var expected = "Hello World from Kotlin on success"
+            var expected = "Hello World from Kotlin"
             var actual : String = client.toBlocking().retrieve("/hello")
             actual.equals(expected)
         }
