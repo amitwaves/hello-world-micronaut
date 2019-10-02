@@ -7,7 +7,7 @@ import io.micronaut.http.annotation.Get
 @Controller("/hello")
 class HelloWorldController {
     @Get(produces = [MediaType.TEXT_PLAIN])
-    fun get() : String {
+    fun get(): String {
         return "Hello World from Kotlin"
     }
 }
