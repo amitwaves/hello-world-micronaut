@@ -2,9 +2,9 @@ package com.amitwaves.helloworld.controller
 
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.BehaviorSpec
-import io.micronaut.http.client.RxHttpClient
 import io.micronaut.http.client.annotation.Client
-import io.micronaut.test.annotation.MicronautTest
+import io.micronaut.rxjava2.http.client.RxHttpClient
+import io.micronaut.test.extensions.junit5.annotation.MicronautTest
 
 @MicronautTest
 class HelloControllerTest(@Client("/") private val client: RxHttpClient) : BehaviorSpec({
